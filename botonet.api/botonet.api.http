@@ -1,0 +1,6 @@
+@botonet.api_HostAddress = http://localhost:5298
+
+GET {{botonet.api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
