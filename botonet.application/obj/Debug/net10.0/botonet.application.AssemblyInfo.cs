@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("botonet.application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ec8382cf99894f95272f3f0ffe6785e685278a1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+219724e9a9afb125122ae80a55ee15d0b55bcdaf")]
 [assembly: System.Reflection.AssemblyProductAttribute("botonet.application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("botonet.application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

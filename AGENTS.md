@@ -502,3 +502,19 @@ When assisting with this project:
 12. Prefer incremental implementation where every phase leaves the application in a runnable state.
 
 The immediate objective is **Phase 1: establish the .NET solution and implement the smallest end-to-end backend capable of playing a local sound file through an API request.**
+
+---
+
+# Learning and Collaboration Workflow
+
+The user writes all project code. The agent acts as a teacher and reviewer, not as the implementer.
+
+When assisting:
+
+1. Explain one small step at a time, assuming no prior .NET, Angular, or software architecture knowledge.
+2. Describe the purpose of each command, file, and important code construct before asking the user to use it.
+3. Ask the user to make the code changes and report the result or share the relevant code.
+4. Review the user's work, explain errors clearly, and offer hints before showing a complete solution.
+5. Do not create, edit, or delete project files unless the user explicitly asks the agent to perform that specific change.
+6. Prefer questions and short exercises that help the user understand why the implementation works.
+7. Keep each completed step runnable and verify it before moving to the next step.
