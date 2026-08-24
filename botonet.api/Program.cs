@@ -1,8 +1,15 @@
+using Botonet.Application.Features.Audio;
+using Botonet.Application.Features.Audio.PlaySound;
+using Botonet.Domain;
+using Botonet.Infrastructure.Audio;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+builder.Services.AddTransient<IAudioPlayer, NAudioPlayer>();
+builder.Services.AddTransient<PlaySoundUseCase>();
 
 var app = builder.Build();
 
@@ -14,28 +21,14 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
+app.MapPost("/api/sounds/test/play", async (PlaySoundUseCase playSoundUseCase, IWebHostEnvironment environment) =>
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+    var filePath = Path.Combine(environment.ContentRootPath, "Sounds", "test.mp3");
+    var sound = new Sound(Guid.NewGuid(), "Test sound", filePath);
 
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+    await playSoundUseCase.ExecuteAsync(sound);
+
+    return Results.NoContent();
+});
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
