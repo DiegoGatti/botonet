@@ -1,10 +1,8 @@
-# Build results
-[Dd]ebug/
-[Rr]elease/
-x64/
-[Bb]in/
-[Oo]bj/
+# .NET build output
+**/bin/
+**/obj/
 
-# MSTest test Results
-[Tt]est[Rr]esult*/
-[Bb]uild[Ll]og.*
+# User-specific IDE files
+.vs/
+*.user
+*.suo
