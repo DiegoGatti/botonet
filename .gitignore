@@ -1,8 +1,11 @@
+**/appsettings.*.json
+
 # .NET build output
 **/bin/
 **/obj/
 
 # User-specific IDE files
 .vs/
+.vscode/
 *.user
 *.suo
