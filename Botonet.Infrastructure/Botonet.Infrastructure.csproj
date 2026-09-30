@@ -5,7 +5,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../botonet.application/botonet.application.csproj" />
+    <ProjectReference Include="../Botonet.Application/Botonet.Application.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

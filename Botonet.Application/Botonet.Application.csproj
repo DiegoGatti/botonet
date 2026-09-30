@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\botonet.domain\botonet.domain.csproj" />
+    <ProjectReference Include="..\Botonet.Domain\Botonet.Domain.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

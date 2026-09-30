@@ -1,9 +1,0 @@
-<Solution>
-  <Folder Name="/tests/">
-    <Project Path="tests/Botonet.Application.Tests/Botonet.Application.Tests.csproj" />
-  </Folder>
-  <Project Path="botonet.api/botonet.api.csproj" />
-  <Project Path="botonet.application/botonet.application.csproj" />
-  <Project Path="botonet.domain/botonet.domain.csproj" />
-  <Project Path="botonet.infrastructure/botonet.infrastructure.csproj" />
-</Solution>

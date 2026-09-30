@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\botonet.application\botonet.application.csproj" />
-    <ProjectReference Include="..\botonet.infrastructure\botonet.infrastructure.csproj" />
+    <ProjectReference Include="..\Botonet.Application\Botonet.Application.csproj" />
+    <ProjectReference Include="..\Botonet.Infrastructure\Botonet.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
