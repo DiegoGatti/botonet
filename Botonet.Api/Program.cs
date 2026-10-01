@@ -1,5 +1,7 @@
 using Botonet.Application.Features.Audio;
 using Botonet.Application.Features.Audio.PlaySound;
+using Botonet.Application.Features.Devices;
+using Botonet.Application.Features.Devices.ListAudioDevices;
 using Botonet.Domain;
 using Botonet.Infrastructure.Audio;
 using Scalar.AspNetCore;
@@ -11,6 +13,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 builder.Services.AddTransient<IAudioPlayer, NAudioPlayer>();
 builder.Services.AddTransient<PlaySoundUseCase>();
+builder.Services.AddTransient<IAudioDeviceProvider, NAudioDeviceProvider>();
+builder.Services.AddTransient<ListAudioDevicesUseCase>();
 
 var app = builder.Build();
 
@@ -31,6 +35,12 @@ app.MapPost("/api/sounds/test/play", async (PlaySoundUseCase playSoundUseCase, I
     await playSoundUseCase.ExecuteAsync(sound);
 
     return Results.NoContent();
+});
+
+app.MapGet("/api/devices", (ListAudioDevicesUseCase listAudioDevices) =>
+{
+    var devices = listAudioDevices.Execute();
+    return Results.Ok(devices);
 });
 
 app.Run();
